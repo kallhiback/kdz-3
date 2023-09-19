@@ -36,3 +36,37 @@
     transform: rotate(360deg);
   }
 }
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  background: black;
+  width: 300px;
+  gap: 20px;
+  color: white;
+  transition: 1s;
+  animation: 1s;
+  border-radius: 20px;
+}
+
+.wrapper:hover {
+  background-color: #575762;
+}
+.btn {
+  margin-left: 20px;
+  width: 100px;
+  height: 20px;
+  border-radius: 20px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+input {
+  border-radius: 10px;
+  width: 100px;
+  height: 20px;
+}
+

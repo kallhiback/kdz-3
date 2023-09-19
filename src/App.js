@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import React from "react"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function TodoList() {
+    const todo = () => {
+        const input = document.getElementById("Input")
+        const taskText = input.value.trim()
+        if (taskText !== "") {
+            const List = document.getElementById("List")
+            const newTask = document.createElement("li")
+            newTask.textContent = taskText
+            List.appendChild(newTask)
+            input.value = ""
+        }
+    }
+
+    return (
+        <div className="wrapper">
+            <div className="todo-list">
+                <h1>Todo</h1>
+                <div className="task-input">
+                    <input
+                        id="Input"
+                        type="text"
+                        placeholder="Впиши что-то"
+                    />
+                    <button onClick={todo} className="btn">Нажми</button>
+                </div>
+                <div className="tasks">
+                    <ul id="List"></ul>
+                </div>
+            </div>
+        </div>
+    )
 }
 
-export default App;
+function App() {
+    return (
+        <div className="App">
+            <TodoList />
+        </div>
+    )
+
+}
+
+export default App
